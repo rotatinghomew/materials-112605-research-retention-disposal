@@ -1,0 +1,286 @@
+{
+  "sites": [
+    {
+      "id": "A",
+      "org": "研究院本部",
+      "capability": "retain"
+    },
+    {
+      "id": "B",
+      "org": "协作图谱室",
+      "capability": "retain"
+    },
+    {
+      "id": "C",
+      "org": "受托处置点",
+      "capability": "destroy"
+    }
+  ],
+  "samples": [
+    {
+      "id": "S-1",
+      "origin": "SRC-P",
+      "parent": null,
+      "mass": 4000,
+      "initial_site": "A",
+      "earliest": "2027-01-18T10:00:00+08:00"
+    },
+    {
+      "id": "S-2",
+      "origin": "SRC-P",
+      "parent": "S-1",
+      "mass": 1500,
+      "initial_site": "A",
+      "earliest": "2027-01-18T10:00:00+08:00"
+    },
+    {
+      "id": "S-3",
+      "origin": "SRC-P",
+      "parent": "S-1",
+      "mass": 2000,
+      "initial_site": "B",
+      "earliest": "2027-01-18T10:00:00+08:00"
+    },
+    {
+      "id": "S-4",
+      "origin": "SRC-Q",
+      "parent": null,
+      "mass": 500,
+      "initial_site": "B",
+      "earliest": "2027-01-18T10:30:00+08:00"
+    },
+    {
+      "id": "S-5",
+      "origin": "SRC-P",
+      "parent": null,
+      "mass": 3000,
+      "initial_site": "B",
+      "earliest": "2027-01-18T10:00:00+08:00"
+    },
+    {
+      "id": "S-6",
+      "origin": "SRC-R",
+      "parent": null,
+      "mass": 700,
+      "initial_site": "A",
+      "earliest": "2027-01-18T10:00:00+08:00"
+    }
+  ],
+  "reports": [
+    {
+      "id": "RP1",
+      "archive": "ARC",
+      "owner": "TEAM-P",
+      "version": 1,
+      "claims": [
+        [
+          "S-2",
+          "exact",
+          1000
+        ]
+      ],
+      "from": "2027-01-18T08:00:00+08:00",
+      "until": "2027-01-18T12:00:00+08:00",
+      "replaces": null
+    },
+    {
+      "id": "RP2",
+      "archive": "ARC",
+      "owner": "TEAM-T",
+      "version": 1,
+      "claims": [
+        [
+          "S-3",
+          "origin",
+          1800
+        ]
+      ],
+      "from": "2027-01-18T08:00:00+08:00",
+      "until": "2027-01-18T15:00:00+08:00",
+      "replaces": null
+    },
+    {
+      "id": "RP3",
+      "archive": "ARC",
+      "owner": "TEAM-R",
+      "version": 1,
+      "claims": [
+        [
+          "S-4",
+          "exact",
+          500
+        ]
+      ],
+      "from": "2027-01-18T08:00:00+08:00",
+      "until": "2027-01-18T11:00:00+08:00",
+      "replaces": null
+    },
+    {
+      "id": "RP4",
+      "archive": "ARC",
+      "owner": "TEAM-P",
+      "version": 2,
+      "claims": [
+        [
+          "S-5",
+          "origin",
+          1500
+        ]
+      ],
+      "from": "2027-01-18T11:10:00+08:00",
+      "until": "2027-01-18T15:00:00+08:00",
+      "replaces": "RP1"
+    }
+  ],
+  "holds": [
+    {
+      "id": "H-A",
+      "legal": "LAW",
+      "scope": "sample",
+      "references": [
+        "S-2"
+      ],
+      "state": "open",
+      "effective": "2027-01-18T11:00:00+08:00",
+      "reported": "2027-01-18T11:03:00+08:00"
+    },
+    {
+      "id": "H-B",
+      "legal": "LAW",
+      "scope": "report",
+      "references": [
+        "RP2"
+      ],
+      "state": "open",
+      "effective": "2027-01-18T10:15:00+08:00",
+      "reported": "2027-01-18T10:16:00+08:00"
+    },
+    {
+      "id": "H-C",
+      "legal": "LAW",
+      "scope": "sample",
+      "references": [
+        "S-4",
+        "S-6"
+      ],
+      "state": "open",
+      "effective": "2027-01-18T11:30:00+08:00",
+      "reported": "2027-01-18T11:31:00+08:00"
+    },
+    {
+      "id": "H-D",
+      "legal": "LAW",
+      "scope": "hold",
+      "references": [
+        "H-B"
+      ],
+      "state": "released",
+      "effective": "2027-01-18T13:15:00+08:00",
+      "reported": "2027-01-18T13:16:00+08:00"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "DIS-1",
+      "sample": "S-2",
+      "station": "A",
+      "destination": "C",
+      "mass": 500,
+      "requested": "2027-01-18T10:10:00+08:00"
+    },
+    {
+      "id": "DIS-2",
+      "sample": "S-4",
+      "station": "B",
+      "destination": "C",
+      "mass": 500,
+      "requested": "2027-01-18T11:02:00+08:00"
+    },
+    {
+      "id": "DIS-3",
+      "sample": "S-6",
+      "station": "A",
+      "destination": "C",
+      "mass": 700,
+      "requested": "2027-01-18T10:20:00+08:00"
+    },
+    {
+      "id": "DIS-4",
+      "sample": "S-5",
+      "station": "B",
+      "destination": "C",
+      "mass": 1000,
+      "requested": "2027-01-18T10:25:00+08:00"
+    },
+    {
+      "id": "DIS-5",
+      "sample": "S-3",
+      "station": "B",
+      "destination": "C",
+      "mass": 2000,
+      "requested": "2027-01-18T13:25:00+08:00"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "RC1",
+      "ticket": "DIS-1",
+      "sample": "S-2",
+      "actor": "A",
+      "state": "dispatched",
+      "mass": 500,
+      "happened": "2027-01-18T10:50:00+08:00",
+      "arrived": "2027-01-18T10:52:00+08:00"
+    },
+    {
+      "id": "RC2",
+      "ticket": "DIS-1",
+      "sample": "S-2",
+      "actor": "C",
+      "state": "accepted",
+      "mass": 500,
+      "happened": "2027-01-18T10:58:00+08:00",
+      "arrived": "2027-01-18T11:17:00+08:00"
+    },
+    {
+      "id": "RC3",
+      "ticket": "DIS-1",
+      "sample": "S-2",
+      "actor": "C",
+      "state": "destroyed",
+      "mass": 500,
+      "happened": "2027-01-18T10:59:00+08:00",
+      "arrived": "2027-01-18T11:23:00+08:00"
+    },
+    {
+      "id": "RC4",
+      "ticket": "DIS-2",
+      "sample": "S-4",
+      "actor": "B",
+      "state": "dispatched",
+      "mass": 500,
+      "happened": "2027-01-18T11:15:00+08:00",
+      "arrived": "2027-01-18T11:16:00+08:00"
+    },
+    {
+      "id": "RC5",
+      "ticket": "DIS-2",
+      "sample": "S-4",
+      "actor": "C",
+      "state": "returned",
+      "mass": 500,
+      "happened": "2027-01-18T11:27:00+08:00",
+      "arrived": "2027-01-18T12:00:00+08:00"
+    },
+    {
+      "id": "RC6",
+      "ticket": "DIS-3",
+      "sample": "S-6",
+      "actor": "C",
+      "state": "accepted",
+      "mass": 700,
+      "happened": "2027-01-18T10:58:00+08:00",
+      "arrived": "2027-01-18T11:15:00+08:00"
+    }
+  ]
+}
